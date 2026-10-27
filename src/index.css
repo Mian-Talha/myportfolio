@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #092328;
+  --color-surface: #12544F;
+  --color-primary: #2A835F;
+  --color-accent: #8BBB92;
+  --color-text: #E6F0EA;
+  --color-muted: #A7BFB5;
+}
+
+body {
+  @apply bg-bg text-text antialiased;
+}
+
+@keyframes page-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-enter {
+  animation: page-in 0.45s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-enter {
+    animation: none;
+  }
+}
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+.glow {
+  transition: box-shadow 0.35s ease, border-color 0.35s ease, transform 0.35s ease;
+}
+
+.glow:hover {
+  border-color: var(--color-accent);
+  transform: translateY(-4px);
+  box-shadow:
+    0 0 0 1px rgb(139 187 146 / 0.35),
+    0 0 24px rgb(139 187 146 / 0.25),
+    0 0 60px rgb(42 131 95 / 0.25);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glow:hover {
+    transform: none;
+  }
+}

@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Talha Asif | Frontend Developer</title>
+  <style>
+    #preloader {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 28px;
+      background: #092328;
+      transition: opacity 0.6s ease, visibility 0.6s ease;
+    }
+
+    #preloader.hide {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .loader-rings {
+      position: relative;
+      width: 140px;
+      height: 140px;
+    }
+
+    .loader-rings span {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      border: 5px solid transparent;
+    }
+
+    .loader-rings span:nth-child(1) {
+      border-top-color: #8BBB92;
+      border-right-color: #8BBB92;
+      animation: spin 1.2s linear infinite;
+    }
+
+    .loader-rings span:nth-child(2) {
+      inset: 18px;
+      border-bottom-color: #2A835F;
+      border-left-color: #2A835F;
+      animation: spin 1.6s linear infinite reverse;
+    }
+
+    .loader-rings span:nth-child(3) {
+      inset: 36px;
+      border-top-color: #12544F;
+      border-right-color: #8BBB92;
+      animation: spin 2s linear infinite;
+    }
+
+    .loader-name {
+      font-family: system-ui, sans-serif;
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: #E6F0EA;
+      animation: pulse 1.6s ease-in-out infinite;
+    }
+
+    .loader-name b {
+      color: #8BBB92;
+      font-weight: 700;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.45;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .loader-rings span,
+      .loader-name {
+        animation-duration: 4s;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="preloader" role="status" aria-label="Loading">
+    <div class="loader-rings"><span></span><span></span><span></span></div>
+    <div class="loader-name">Talha <b>Asif</b></div>
+  </div>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
+</html>

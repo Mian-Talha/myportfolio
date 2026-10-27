@@ -1,0 +1,58 @@
+export const experience = [
+  {
+    role: 'MERN Stack Web Developer',
+    company: 'DevVerx',
+    period: '2026',
+    location: 'Lahore',       
+    points: [
+      'Develop and maintain the frontend of Document Review, a legal document review platform, using React and FastAPI.',
+      'Design and implement API integration for user management, admin operations, document workflows, and core application functionality.',
+      'Developed JWT-based authentication and authorization to secure APIs and ensure controlled access to user and administrative resources.',
+      'Integrated Stripe payment services to support subscription and payment workflows, including backend payment processing and verification.',
+      'Designed and managed PostgreSQL database operations for users, subscriptions, documents, and application data.',
+      'Worked on document processing and file management workflows, including handling uploaded documents and integrating them with backend services.',
+      'Collaborated with backend and frontend developers to translate business requirements into scalable, secure, and maintainable backend solutions.',
+      'Troubleshot production issues, optimized backend functionality, and continuously improved application reliability and performance.',
+    ],
+  },
+  {
+    role: 'Front-end Developer',
+    company: 'Jerrax',
+    period: '2025',
+    location: 'Remote',
+    points: [
+      'Developed and maintained front-end applications and RESTful APIs using React and Vue.js.',
+      'Implemented front-end features including CRUD operations, database integration, authentication, and business logic.',
+      'Worked with relational databases and developed API endpoints to support front-end and third-party application requirements.',
+      'Integrated external services and APIs while handling request validation, error handling, and backend data processing.',
+      'Collaborated with senior developers and cross-functional teams to troubleshoot issues and deliver project requirements.',
+      'Used Git, API testing tools, and development best practices to maintain reliable and maintainable front-end applications.',
+    ],
+  },
+  {
+role: 'QA Engineer',
+company: 'WISEMARKET',
+period: '2022 - 2023',
+points: [
+'Performed functional, manual, and unit testing to verify application functionality, reliability, and compliance with project requirements.',
+'Designed and executed test cases covering core application workflows, edge cases, and regression scenarios.',
+'Performed API and performance testing using K6.io to evaluate application behavior and identify performance bottlenecks under different loads.',
+'Identified, documented, and tracked software defects while collaborating with developers to reproduce issues and verify fixes.',
+'Worked closely with development and product teams to understand requirements, validate new features, and maintain overall software quality.',
+'Performed regression testing after new releases and bug fixes to ensure existing functionality remained stable.',
+],
+},
+{
+role: 'Team Lead — Walmart Customer Support',
+company: 'IBEX',
+period: 'June 2020 – March 2022',
+location: 'Pakistan',
+points: [
+'Provided chat-based customer support for Walmart customers in the United States, resolving customer queries and service-related issues efficiently.',
+'Promoted to Team Lead based on performance, taking responsibility for supporting team members and maintaining service quality.',
+'Handled escalated customer issues, assisted agents with complex cases, and ensured timely resolution of customer concerns.',
+'Monitored team performance, provided guidance and feedback, and helped maintain service and quality standards.',
+'Developed strong communication, problem-solving, leadership, and customer relationship skills while working in a fast-paced environment.',
+],
+},
+]
