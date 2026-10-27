@@ -68,7 +68,12 @@ export default function Footer() {
               </li>
             )}
             <li>
-              <ButtonLink href="/resume" className={linkClass}>
+              <ButtonLink
+                href="/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={linkClass}
+              >
                 <FileText size={16} className="text-accent" aria-hidden="true" /> View Resume
               </ButtonLink>
             </li>

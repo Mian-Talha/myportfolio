@@ -38,7 +38,9 @@ export default function Hero() {
           </ButtonLink>
 
           <ButtonLink
-            href="/resume"
+            href={hero.resumeUrl || '/resume.pdf'}
+            target="_blank"
+            rel="noopener noreferrer"
             className="glow inline-flex items-center gap-2 rounded-full border border-primary bg-surface/40 px-7 py-3.5 font-semibold text-accent transition hover:bg-surface focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
           >
             <FileText size={18} aria-hidden="true" /> View Resume

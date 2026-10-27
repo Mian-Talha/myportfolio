@@ -1,4 +1,4 @@
-import { Clock, ArrowLeft, Mail } from 'lucide-react'
+import { Clock, ArrowLeft, Mail, FileText } from 'lucide-react'
 import ButtonLink from '../components/ui/ButtonLink.jsx'
 
 export default function Resume() {
@@ -14,7 +14,7 @@ export default function Resume() {
         </h1>
         <p className="mx-auto mt-4 max-w-md leading-relaxed text-muted">
           I'm updating my resume with my latest work and experience. It will be available here soon.
-          In the meantime, feel free to reach out directly.
+          In the meantime, feel free to reach out directly or view my existing resume.
         </p>
 
         <div className="mt-8 flex flex-wrap justify-center gap-4">
@@ -23,6 +23,14 @@ export default function Resume() {
             className="inline-flex items-center gap-2 rounded-full border border-primary bg-surface/40 px-6 py-3 font-semibold text-accent transition hover:bg-surface"
           >
             <ArrowLeft size={18} aria-hidden="true" /> Back to Home
+          </ButtonLink>
+          <ButtonLink
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full border border-primary bg-surface/40 px-6 py-3 font-semibold text-accent transition hover:bg-surface"
+          >
+            <FileText size={18} aria-hidden="true" /> View Resume (PDF)
           </ButtonLink>
           <ButtonLink
             href="/#contact"
