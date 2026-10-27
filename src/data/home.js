@@ -11,6 +11,6 @@ export const hero = {
 export const stats = [
   { value: '2', label: 'Years Exp' },
   // { value: '30+', label: 'API Endpoints' },
-  { value: '7+', label: 'Projects' },
+  { value: '8+', label: 'Projects' },
   { value: '4+', label: 'Tool' },
 ]
