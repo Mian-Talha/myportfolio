@@ -1,23 +1,19 @@
-import SectionHeading from '../components/ui/SectionHeading.jsx'
-import TimelineItem from '../components/sections/TimelineItem.jsx'
-import { experience } from '../data/experience.js'
+import { ArrowLeft } from 'lucide-react'
+import ButtonLink from '../components/ui/ButtonLink.jsx'
+import ExperienceSection from '../components/sections/ExperienceSection.jsx'
 
 export default function Experience() {
   return (
-    <section className="mx-auto max-w-6xl px-6 py-16" id="experience">
-      <SectionHeading title="Professional" highlight="Experience" />
-
-      <div className="relative">
-        <div
-          className="absolute left-4 top-0 h-full w-px bg-surface md:left-1/2 md:-translate-x-1/2"
-          aria-hidden="true"
-        />
-        <ol className="space-y-12">
-          {experience.map((item, i) => (
-            <TimelineItem key={item.role + item.company} item={item} index={i} />
-          ))}
-        </ol>
+    <div className="py-8">
+      <div className="mx-auto max-w-6xl px-6">
+        <ButtonLink
+          href="/"
+          className="inline-flex items-center gap-2 text-sm font-medium text-muted transition hover:text-accent"
+        >
+          <ArrowLeft size={16} aria-hidden="true" /> Back to Home
+        </ButtonLink>
       </div>
-    </section>
+      <ExperienceSection />
+    </div>
   )
 }

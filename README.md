@@ -1,48 +1,58 @@
 # Talha Portfolio
 
-Personal portfolio site for **Mian Talha Asif**, Python Backend Developer — built with React, Vite, and Tailwind CSS.
+Personal portfolio site for **Mian Talha Asif** — built with React 19, Vite, React Router 8, and Tailwind CSS v4.
 
 ## Tech Stack
 
-- **React 19** + **React Router 8** — SPA with in-page hash routing
+- **React 19** + **React Router 8** — Full single-page landing + dedicated page routes
 - **Vite 8** — dev server & build tooling
 - **Tailwind CSS v4** (`@tailwindcss/vite`) — utility-first styling with custom theme tokens
-- **Framer Motion** — animations
-- **lucide-react** — icons
-- **nodemailer** — SMTP email sending for the serverless contact endpoint
+- **Framer Motion** — animations & micro-interactions
+- **lucide-react** — modern icons
+- **FormSubmit AJAX / SMTP** — Direct contact email delivery to `talhaasif0077@gmail.com`
 - **ESLint 10** — linting
 
-## Project Structure
+## Professional 2026 Project Structure
 
 ```
 talha-portfolio/
 ├── api/
-│   └── contact.js          # Vercel serverless function: sends contact form emails via SMTP
+│   └── contact.js          # Vercel serverless function (SMTP alternative)
 ├── public/
-│   ├── Python_favicon.png
-│   └── resume.pdf
+│   ├── favicon.png
+│   └── resume.pdf          # Resume PDF accessible at /resume.pdf
 ├── src/
+│   ├── assets/             # Static images
 │   ├── components/
-│   │   ├── layout/          # RootLayout, Header, Footer, ScrollToTop
-│   │   ├── sections/        # Hero, ContactForm, ProjectCard, SkillCard, TimelineItem
-│   │   └── ui/               # ButtonLink, HoverCard, InfoCard, SectionHeading, animated-background
-│   ├── data/                # Content: home, about, experience, skills, projects, contact, navigation
-│   ├── hooks/
-│   │   └── useActiveSection.js
-│   ├── pages/                # Home (active), About/Experience/Skills/Projects/Contact/NotFound (page-level, currently unmounted)
-│   ├── App.jsx               # Route definitions
-│   ├── main.jsx               # App entry point
-│   └── index.css             # Tailwind + theme tokens
+│   │   ├── cards/          # Reusable domain cards: ProjectCard, SkillCard, TimelineItem
+│   │   ├── layout/         # RootLayout, Header, Footer, ScrollToTop
+│   │   ├── sections/       # HeroSection, AboutSection, ExperienceSection, SkillsSection, ProjectsSection, ContactSection, ContactForm
+│   │   └── ui/             # ButtonLink, HoverCard, InfoCard, SectionHeading, AnimatedBackground
+│   ├── data/               # Content data: home, about, experience, skills, projects, contact, navigation
+│   ├── hooks/              # Custom React hooks (useActiveSection)
+│   ├── pages/              # Route pages: Home, About, Experience, Skills, Projects, Contact, Resume, NotFound
+│   ├── services/           # Services: contactService (email delivery, validation, fallback)
+│   ├── App.jsx             # Active route definitions
+│   ├── main.jsx            # App entry point
+│   └── index.css           # Tailwind + theme tokens
 ├── vite.config.js
 └── package.json
 ```
 
+## Routes
+
+| Path | Description |
+|------|-------------|
+| `/` | Full landing page with smooth scroll & hash links (`/#about`, `/#projects`, etc.) |
+| `/about` | Standalone About page |
+| `/experience` | Standalone Experience page |
+| `/skills` | Standalone Skills page |
+| `/projects` | Standalone Projects page |
+| `/contact` | Standalone Contact page |
+| `/resume` | Standalone Resume view/download page |
+| `*` | Custom styled 404 Not Found page |
+
 ## Getting Started
-
-### Prerequisites
-
-- Node.js (recent LTS)
-- npm
 
 ### Install
 
@@ -56,46 +66,15 @@ npm install
 npm run dev
 ```
 
-Starts the Vite dev server with HMR.
-
-### Lint
-
-```bash
-npm run lint
-```
-
-### Build
+### Production Build
 
 ```bash
 npm run build
 ```
 
-> Note: the current `build` script runs `tsc -b && vite build`, but this project is plain JavaScript (no `tsconfig.json`). See [PROGRESS.md](./PROGRESS.md) for details.
+## Contact Form & Email Delivery
 
-### Preview production build
-
-```bash
-npm run preview
-```
-
-## Content
-
-All page copy (hero text, about summary, experience timeline, skills, projects, contact info) lives in `src/data/*.js` — update those files to change site content without touching components.
-
-## Contact Form
-
-The contact form (`src/components/sections/ContactForm.jsx`) posts to `FORM_ENDPOINT`, defined in `src/data/contact.js`. A Vercel serverless function at `api/contact.js` is available as an SMTP-based alternative and requires these environment variables:
-
-| Variable      | Description                          |
-|---------------|---------------------------------------|
-| `SMTP_HOST`   | SMTP server host                      |
-| `SMTP_PORT`   | SMTP server port                      |
-| `SMTP_USER`   | SMTP auth username                    |
-| `SMTP_PASS`   | SMTP auth password                    |
-| `CONTACT_TO`  | Destination address for messages      |
-
-See [PROGRESS.md](./PROGRESS.md) for current setup status and what's still pending.
-
-## Project Status
-
-See [PROGRESS.md](./PROGRESS.md) for a full breakdown of what's implemented, what's in progress, and suggested next steps.
+Submitting the form delivers messages directly to `talhaasif0077@gmail.com`:
+- **FormSubmit AJAX service** delivers form data directly to your inbox without requiring a separate backend server.
+- **Client validation & Honeypot** filters spam submissions automatically.
+- **Direct Mailto Fallback** ensures visitors can always reach you even if they are offline.

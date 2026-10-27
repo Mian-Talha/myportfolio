@@ -1,37 +1,40 @@
 import { useEffect } from 'react'
 import { useLocation } from 'react-router'
-import Hero from '../components/sections/Hero.jsx'
-import About from './About.jsx'
-import Experience from './Experience.jsx'
-import Skills from './Skills.jsx'
-import Projects from './Projects.jsx'
-import Contact from './Contact.jsx'
+import HeroSection from '../components/sections/HeroSection.jsx'
+import AboutSection from '../components/sections/AboutSection.jsx'
+import ExperienceSection from '../components/sections/ExperienceSection.jsx'
+import SkillsSection from '../components/sections/SkillsSection.jsx'
+import ProjectsSection from '../components/sections/ProjectsSection.jsx'
+import ContactSection from '../components/sections/ContactSection.jsx'
 
 const sections = [
-  ['about', About],
-  ['experience', Experience],
-  ['skills', Skills],
-  ['projects', Projects],
-  ['contact', Contact],
+  ['about', AboutSection],
+  ['experience', ExperienceSection],
+  ['skills', SkillsSection],
+  ['projects', ProjectsSection],
+  ['contact', ContactSection],
 ]
 
 export default function Home() {
   const { hash } = useLocation()
 
   useEffect(() => {
-    if (hash) document.getElementById(hash.slice(1))?.scrollIntoView()
+    if (hash) {
+      const element = document.getElementById(hash.slice(1))
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' })
+      }
+    }
   }, [hash])
 
   return (
-    <>
-      <div id="home">
-        <Hero />
-      </div>
+    <div className="flex flex-col gap-12">
+      <HeroSection />
       {sections.map(([id, Section]) => (
-        <div key={id} id={id} className="scroll-mt-20">
+        <div key={id} id={id} className="scroll-mt-24">
           <Section />
         </div>
       ))}
-    </>
+    </div>
   )
-} 
+}

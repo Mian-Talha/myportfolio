@@ -1,16 +1,19 @@
-import SectionHeading from '../components/ui/SectionHeading.jsx'
-import SkillCard from '../components/sections/SkillCard.jsx'
-import { skillGroups } from '../data/skills.js'
+import { ArrowLeft } from 'lucide-react'
+import ButtonLink from '../components/ui/ButtonLink.jsx'
+import SkillsSection from '../components/sections/SkillsSection.jsx'
 
 export default function Skills() {
   return (
-    <section className="mx-auto max-w-6xl px-6 py-16" id="skills">
-      <SectionHeading title="Technical" highlight="Skills" />
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {skillGroups.map((group) => (
-          <SkillCard key={group.title} {...group} />
-        ))}
+    <div className="py-8">
+      <div className="mx-auto max-w-6xl px-6">
+        <ButtonLink
+          href="/"
+          className="inline-flex items-center gap-2 text-sm font-medium text-muted transition hover:text-accent"
+        >
+          <ArrowLeft size={16} aria-hidden="true" /> Back to Home
+        </ButtonLink>
       </div>
-    </section>
+      <SkillsSection />
+    </div>
   )
 }

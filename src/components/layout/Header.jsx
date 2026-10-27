@@ -15,9 +15,11 @@ export default function Header() {
   const active = useActiveSection(sectionIds)
   const close = () => setOpen(false)
 
-  const reload = (e) => {
-    e.preventDefault()
-    window.location.assign('/')
+  const onLogoClick = (e) => {
+    if (window.location.pathname === '/') {
+      e.preventDefault()
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
   }
 
   useEffect(() => {
@@ -39,7 +41,7 @@ export default function Header() {
         }`}
     >
       <nav aria-label="Main" className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <ButtonLink href="/" onClick={reload} className="text-xl font-bold tracking-tight text-text glow">
+        <ButtonLink href="/" onClick={onLogoClick} className="text-xl font-bold tracking-tight text-text glow">
           Talha <span className="text-accent">Asif</span>
         </ButtonLink>
 
