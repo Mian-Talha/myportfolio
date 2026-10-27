@@ -1,4 +1,5 @@
 import { Clock, ArrowLeft, Mail, FileText } from 'lucide-react'
+import { hero } from '../data/home.js'
 import ButtonLink from '../components/ui/ButtonLink.jsx'
 
 export default function Resume() {
@@ -25,7 +26,7 @@ export default function Resume() {
             <ArrowLeft size={18} aria-hidden="true" /> Back to Home
           </ButtonLink>
           <ButtonLink
-            href="/resume.pdf"
+            href={hero.resumeUrl || '/Talha%20Asif%20resume.pdf'}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full border border-primary bg-surface/40 px-6 py-3 font-semibold text-accent transition hover:bg-surface"

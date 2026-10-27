@@ -1,6 +1,7 @@
 import { ArrowUp, FileText, Mail, MapPin } from 'lucide-react'
 import { navLinks } from '../../data/navigation.js'
 import { contactInfo } from '../../data/contact.js'
+import { hero } from '../../data/home.js'
 import ButtonLink from '../ui/ButtonLink.jsx'
 
 const email = contactInfo.find((c) => c.label === 'Email')?.value
@@ -69,7 +70,7 @@ export default function Footer() {
             )}
             <li>
               <ButtonLink
-                href="/resume.pdf"
+                href={hero.resumeUrl || '/Talha%20Asif%20resume.pdf'}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={linkClass}
